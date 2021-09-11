@@ -12,13 +12,13 @@ cfg = configparser.ConfigParser()
 cfg.read('config.ini')
 flexbus_last_max_date = None
 neobus_last_max_date = None
-f = open('emailList.json',)
-log = open("cebulabus.log")
+f = open('emailList.json')
+log = open("cebulabus.log","a")
 emails = json.load(f)
 
 def write_log(text):
     print(text)
-    log.write(text)
+    log.write(text+'\n')
 
 def send_email(busname, newDate):
     msg = EmailMessage()
